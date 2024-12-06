@@ -78,34 +78,11 @@ export default function Cart() {
                                         </svg>
                                     </Link>
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </section>
-
-
-
-
-
-
-
-
-
-            {/* <h3>Productos del carrito</h3>
-            {cart.map((item) => (
-                <CartItem key={item.ID} {... item}/> 
-            ))}
-            <h2>TOTAL: ${total}</h2>
-            <div>
-                <button onClick={clearCart} className="">Limpiar carrito</button>
-            </div>
-
-            <Link to='/checkout'>Finalizar Compra checkout</Link> */}
         </>
     )
 }
