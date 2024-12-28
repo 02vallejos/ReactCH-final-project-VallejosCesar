@@ -14,9 +14,14 @@ function ItemListContainer(props) {
     const { setNotification } = useNotification();
 
     useEffect(() => {
+        console.log("la etiqueta brandId es");
+        console.log(brandId);
         const collectionRef = brandId
             ? query(collection(db, "products"), where("brand", "==", brandId)) // filtrados por categoria
-            : collection(db, "products") //todos los productos
+            : collection(db, "products");
+             //todos los productos
+            console.log("colecction ref");
+            console.log(collectionRef);
 
         getDocs(collectionRef)
             .then((querySnapshot) => {
@@ -27,8 +32,8 @@ function ItemListContainer(props) {
                 setLoader(false);
                 setProducts(prod);
             })
-            .catch(() => {
-                console.log(error);
+            .catch((error) => {
+                console.error(error);;
                 setNotification('danger', 'No se completo la pestición')
             })
     }, [brandId])
